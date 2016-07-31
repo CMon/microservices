@@ -10,6 +10,6 @@ exists($${MICROSERVICES_ROOT}/local.pri) {
 
 include($${CFLIB_PATH}/include.pri)
 
-INCLUDEPATH += $${EXT_INCLUDES} $${MICROSERVICES_ROOT} build/gen .
+INCLUDEPATH += $${EXT_INCLUDES} $${MICROSERVICES_ROOT}/microservices build/gen .
 
 CONFIG += c++11
