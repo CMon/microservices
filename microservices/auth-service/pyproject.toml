@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "auth-service"
+version = "0.1.0"
+description = ""
+authors = ["Simon Schäfer <simon.schaefer@koeln.de>"]
+readme = "README.adoc"
+packages = [{include = "auth_service"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyyaml = "^6.0"
+flask = "^2.3.2"
+pyjwt = "^2.7.0"
+argon2-cffi = "^21.3.0"
+
+[tool.poetry.group.dev.dependencies]
+flask-testing = "^0.8.1"
+pytest = "^7.3.2"
+pytest-subtests = "^0.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

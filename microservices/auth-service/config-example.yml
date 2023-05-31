@@ -1,0 +1,6 @@
+authService:
+  webServer:
+    listenPort: 8080
+    listenHost: localhost
+  database:
+    file: "~/.share/microservices/authService.sqlite"

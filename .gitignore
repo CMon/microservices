@@ -1,2 +1,3 @@
 local.pri
 *.pro.user
+*.txt.user

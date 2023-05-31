@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/home/twist/.cache/pypoetry/virtualenvs/auth-service-zxb1naVF-py3.11/bin/python",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

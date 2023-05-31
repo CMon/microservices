@@ -1,0 +1,30 @@
+= Idea
+
+A general auth service that stores username and password with some user information
+
+permissions are application based, each application has an encryption key or private public key
+permissions are per application each has an id that is unique for the application
+
+if authenticated then a jwt is created that  contains per application enctypted data, either
+encrypted with the per encryption key, this way each app can only decipher the permissions meant for itself
+
+the jwt has an expiretime of 2h
+
+
+use qthttpServer or openapi + python
+
+api:
+
+addUser(username, password, email, Prename, lastname) metadata: created at, created by
+login(username, password)
+logout(username) => invalidates jwt(puts it on a blacklist, needs to be persistant over restarts; can be asked for (for higher security requirements)
+renewJWT(jwtId) => extend expiretime
+isBlacklistedJwt(jwtId)
+userExists(username)
+getUser(username)
+removeUser(username)
+getUsers(offset)
+getUserCount()
+addApplication(applicationShortName, applicationDescription)
+addPermission(applicationShortName, permissionShortName, permissionDescription)
+addUserPermission(username, applicationShortName, permissionShortName)
