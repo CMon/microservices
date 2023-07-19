@@ -6,12 +6,16 @@ authors = ["Simon Schäfer <simon.schaefer@koeln.de>"]
 readme = "README.adoc"
 packages = [{include = "auth_service"}]
 
+[tool.poetry.scripts]
+auth-service = "auth_service.main:main"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 pyyaml = "^6.0"
 flask = "^2.3.2"
 pyjwt = "^2.7.0"
 argon2-cffi = "^21.3.0"
+flask-login = "^0.6.2"
 
 [tool.poetry.group.dev.dependencies]
 flask-testing = "^0.8.1"

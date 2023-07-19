@@ -1,7 +1,14 @@
 from Api import API
+from flask import Flask
+from flask_login import LoginManager
+import random,string
+
+def randomAlphanumeric(stringLength=8):
+    lettersAndDigits = string.ascii_letters + string.digits
+    return ''.join((random.choice(lettersAndDigits) for i in range(stringLength)))
 
 class WebApp(object):
-    def __init__(self, configFile):
+    def __init__(self, configFile, database):
         self.__configFile = configFile
         self.__database = database
 
@@ -11,7 +18,7 @@ class WebApp(object):
         login = LoginManager(app)
 
 
-        api = API(database)
+        api = API(self.__database)
 
         globalData = GlobalData()
 
@@ -62,4 +69,4 @@ class WebApp(object):
         app.add_url_rule('/registeredCards', view_func=administration.registeredCards, methods=['GET'])
         app.add_url_rule('/administration/addCard', view_func=administration.addCard, methods=['GET', 'POST'])
 
-
+        return app
